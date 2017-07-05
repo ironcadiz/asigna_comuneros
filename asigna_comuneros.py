@@ -51,15 +51,19 @@ def valid_pair(woman,men,women,activity):
 
     return choice(valid_men)
 
-def pretty_print(result,days,activities):
+def pretty_print(result,days,activities,file):
+    f = open(file,"w")
     headers = ["| {} |".format(d.center(20," ")) for d in days]
     headers = "".join(headers)
     headers = " " * 10 + "|" + headers
     print(headers)
+    f.write(headers + "\n")
     for a in activities:
         row = ["| {} |".format(str(result[d][a]).center(20, " ")) for d in days]
         row = a.center(10," ") + "|" + "".join(row)
         print(row)
+        f.write(row + "\n")
+    f.close()
 
 
 
@@ -74,5 +78,5 @@ if __name__ == '__main__':
     for d in DAYS:
         for a in ACTIVITIES:
             result[d][a] = tuple(assign_activity(men,women,a))
-    pretty_print(result,DAYS,ACTIVITIES )
+    pretty_print(result,DAYS,ACTIVITIES,"asignacion.txt" )
 

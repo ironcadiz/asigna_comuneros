@@ -69,7 +69,6 @@ def pretty_print(result,days,activities,file):
 
 
 if __name__ == '__main__':
-    print("pico")
     ACTIVITIES = ["Desayuno","Aseo","Almuerzo","Cena"]
     DAYS = ["Viernes","Sábado","Domingo","Lunes","Martes"]
     result = {d:{a:(None,None) for a in ACTIVITIES} for d in DAYS}

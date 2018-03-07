@@ -69,7 +69,7 @@ def pretty_print(result,days,activities,file):
 
 
 if __name__ == '__main__':
-
+    print("pico")
     ACTIVITIES = ["Desayuno","Aseo","Almuerzo","Cena"]
     DAYS = ["Viernes","Sábado","Domingo","Lunes","Martes"]
     result = {d:{a:(None,None) for a in ACTIVITIES} for d in DAYS}
@@ -79,4 +79,5 @@ if __name__ == '__main__':
         for a in ACTIVITIES:
             result[d][a] = tuple(assign_activity(men,women,a))
     pretty_print(result,DAYS,ACTIVITIES,"asignacion.txt" )
+
 
